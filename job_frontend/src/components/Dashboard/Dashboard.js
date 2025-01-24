@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './Dashboard.css';
+import '../../Styles/dashboard.css';
 
 const Dashboard = () => {
     const [name, setName] = useState('');
@@ -35,25 +35,27 @@ const Dashboard = () => {
 
     return (
         <div className="dashboard-container">
-            <h2>Dashboard</h2>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    placeholder="Name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    required
-                />
-                <input
-                    type="text"
-                    placeholder="Job Role"
-                    value={jobRole}
-                    onChange={(e) => setJobRole(e.target.value)}
-                    required
-                />
-                <input type="file" onChange={handleFileUpload} required />
-                <button type="submit">Submit</button>
-            </form>
+            <div className="dashboard-box">
+                <h2>Dashboard</h2>
+                <form onSubmit={handleSubmit}>
+                    <input
+                        type="text"
+                        placeholder="Name"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        required
+                    />
+                    <input
+                        type="text"
+                        placeholder="Job Role"
+                        value={jobRole}
+                        onChange={(e) => setJobRole(e.target.value)}
+                        required
+                    />
+                    <input type="file" onChange={handleFileUpload} required />
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
         </div>
     );
 };

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Auth.css';
+import '../../Styles/signup.css';
 import { signUp } from '../../services/api'; // Adjust the import path as necessary
 
 function SignUp() {
@@ -33,24 +33,26 @@ function SignUp() {
 
   return (
     <div className="signup-container">
-      <h2>Sign Up</h2>
-      {error && <p className="error">{error}</p>}
-      {success && <p className="success">{success}</p>}
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button type="submit">Sign Up</button>
-      </form>
+      <div className="signup-box">
+        <h2>Sign Up</h2>
+        {error && <p className="error">{error}</p>}
+        {success && <p className="success">{success}</p>}
+        <form onSubmit={handleSubmit}>
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button type="submit">Sign Up</button>
+        </form>
+      </div>
     </div>
   );
 }

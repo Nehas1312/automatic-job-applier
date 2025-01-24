@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Auth.css';
+import '../../Styles/login.css';
 import { login } from '../../services/api';
 
 function Login() {
@@ -39,25 +39,27 @@ function Login() {
 
   return (
     <div className="login-container">
-      <h2>Login</h2>
-      {error && <p className="error">{error}</p>}
-      {success && <p className="success">{success}</p>}
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button type="submit">Login</button>
-      </form>
-      <button onClick={handleSignUpClick}>Sign Up</button>
+      <div className="login-box">
+        <h2>Login</h2>
+        {error && <p className="error">{error}</p>}
+        {success && <p className="success">{success}</p>}
+        <form onSubmit={handleSubmit}>
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button type="submit">Login</button>
+        </form>
+        <button className="signup-button" onClick={handleSignUpClick}>Sign Up</button>
+      </div>
     </div>
   );
 }
